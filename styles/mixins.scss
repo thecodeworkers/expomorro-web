@@ -1,0 +1,81 @@
+@use 'sass:map';
+
+@mixin responsive($size) {
+  @if $size == xxxl {
+    @media (max-width: 1600px)   {
+      @content;
+    }
+  }
+	@if $size == xxl {
+    @media (max-width: 1400px)   {
+      @content;
+    }
+  }
+
+  @if $size == xl {
+    @media (max-width: 1200px) {
+      @content;
+    }
+  }
+
+  @if $size == lg {
+    @media (max-width: 992px) {
+      @content;
+    }
+  }
+  @if $size == md {
+    @media (max-width: 768px) {
+      @content;
+    }
+  }
+
+  @if $size == sm {
+    @media (max-width: 576px) {
+      @content;
+    }
+  }
+
+  @if $size == xs {
+    @media (max-width: 370px) {
+      @content;
+    }
+  }
+}
+
+@mixin input($textColor, $borderColor, $placeHolder) {
+  @include font('helvetica', 'helvetica15');
+  background: transparent;
+  color: $textColor;
+  border: 1px solid $borderColor;
+  border-radius: 30px;
+  padding: 0.8rem;
+  &::placeholder {
+    color: $placeHolder
+  }
+}
+
+@mixin font($font-name, $font-size) {
+  font-family: map.get($fonts, $font-name);
+  font-size: map.get($font-sizes, $font-size);
+
+  @media
+  only screen and (-webkit-min-device-pixel-ratio: 2),
+  only screen and (   min--moz-device-pixel-ratio: 2),
+  only screen and (     -o-min-device-pixel-ratio: 2/1),
+  only screen and (        min-device-pixel-ratio: 2),
+  only screen and (                min-resolution: 192dpi),
+  only screen and (                min-resolution: 2dppx) {
+    font-size: map.get($font-sizes-retina, $font-size);
+  }
+}
+
+@mixin arrow($color, $padding, $border-width: 0 4px 4px 0) {
+  border: solid $color;
+  border-width: $border-width;
+  display: inline-block;
+  padding: $padding;
+}
+
+@mixin buttonSizeMobile {
+  width: 9.5rem;
+}
