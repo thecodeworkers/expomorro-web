@@ -31,7 +31,7 @@ const getData = (data, type) => {
 }
 
 export const orderBy = (array, key, type = 'desc', deep = null) => {
-  return array.sort((a, b) => {
+  return array?.sort((a, b) => {
     a = _getDeep(a, deep);
     b = _getDeep(b, deep);
 
