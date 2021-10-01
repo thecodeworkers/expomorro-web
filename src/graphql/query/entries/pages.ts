@@ -1,6 +1,5 @@
 const home = `
-
-  pages{
+  pages {
     id
     Nombre
     URI

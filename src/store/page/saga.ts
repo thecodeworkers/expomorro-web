@@ -1,13 +1,14 @@
 import { takeLatest, call, put } from 'redux-saga/effects'
 import { actionObject, GraphQlClient, manageError, validateFetch } from '@utils'
-import { PagesQuery } from '@graphql/query'
-import {GET_PAGE, GET_PAGE_ASYNC } from './action-types'
+import { PagesQuery, headerQuery } from '@graphql/query'
+import { GET_PAGE, GET_PAGE_ASYNC } from './action-types'
 
 const getQueryPages = () => {
 
   const query = `
     query Pages {
       ${PagesQuery}
+      ${headerQuery}
     }
   `
 
@@ -17,9 +18,8 @@ const getQueryPages = () => {
 function* getPageAsync() {
   try {
     const response = yield call(GraphQlClient, getQueryPages(), {})
-    const { pages } = validateFetch(response)
-    console.log(pages)
-    yield put(actionObject(GET_PAGE_ASYNC, { pages }))
+    const { pages, header } = validateFetch(response)
+    yield put(actionObject(GET_PAGE_ASYNC, { pages, header }))
   } catch (err) {
     yield call(manageError, err)
   }

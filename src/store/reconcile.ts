@@ -28,19 +28,9 @@ const reconcile = (state, payload) => {
 
         break
 
-      case 'user':
-        const currentUser = state[key]
-        trueState = { ...trueState, user: currentUser }
-        break
-
       case 'intermitence':
         const currentIntermitence = state[key]
         trueState = { ...trueState, intermitence: currentIntermitence }
-        break
-
-      case 'cart':
-        const currentCart = state[key]
-        trueState = { ...trueState, cart: currentCart }
         break
 
       default:

@@ -3,6 +3,7 @@ import { GET_PAGE_ASYNC } from './action-types'
 
 const initialState = {
   pages: [],
+  header: {}
 }
 
 const pageReducer = (state = initialState, { type, payload }: AnyAction) => {
