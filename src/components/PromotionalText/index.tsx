@@ -1,10 +1,12 @@
 import React, { FC } from 'react'
+import { Props } from './interface'
+import styles from './styles.module.scss'
 
-const PromotionalText: FC = () => {
+const PromotionalText: FC<Props> = ({ data }) => {
 
   return (
-    <div>
-      Hola Layout
+    <div className={styles._main}>
+      <p className={styles._text}>{data?.texto}</p>
     </div>
   )
 }

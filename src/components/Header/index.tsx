@@ -1,11 +1,13 @@
 import { orderBy } from '@utils'
 import { fallbackRestUrl } from '@utils/path'
+import { useRouter } from 'next/dist/client/router'
 import React, { FC } from 'react'
 import { useSelector } from 'react-redux'
 import styles from './styles.module.scss'
 
 const Header: FC = () => {
 
+  const router = useRouter()
   const { page: { header } } = useSelector((state: any) => state)
 
   const Logo = header?.Logo
@@ -20,7 +22,7 @@ const Header: FC = () => {
       <nav>
         <ul className={styles._listNav}>
           {Navigation?.map(
-            (nav: any, key) => <li key={key}>{nav.Name}</li>
+            (nav: any, key) => <li key={key} onClick={() => router.push(nav.page.URI)}>{nav.Name}</li>
           )}
         </ul>
       </nav>

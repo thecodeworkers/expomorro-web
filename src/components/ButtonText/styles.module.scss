@@ -1,0 +1,31 @@
+._main {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3%;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+._bannerMain {
+  width: 100%;
+  height: auto;
+}
+
+._button {
+  width: 300px;
+  height: 50px;
+  border: 1px solid;
+  background: transparent;
+}
+
+._textContent{
+  margin: 1rem 0;
+  width: 530px;
+}
+
+._textTitle{
+  margin-bottom: 1rem;
+}
