@@ -34,6 +34,28 @@ const home = `
           }
         }
       }
+      ... on ComponentFormulariosContacto{
+        Posicion
+        formulario{
+          Input{
+            Posicion
+            Nombre
+            Placeholder
+            Type
+          }
+        }
+        Datos{
+          Posicion
+          Icon{
+            url
+          }
+          Titulo
+          informacion
+        }
+        Titulo
+        Subtitulo
+        TextoPie
+      }
       ... on ComponentBannersSponsorBanner{
         Posicion
       	logos{

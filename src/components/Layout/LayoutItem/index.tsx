@@ -4,6 +4,7 @@ import { Props } from './interface'
 import { layout } from './layout'
 
 const LayoutItem: FC<Props> = ({ data }) => {
+  console.log(data?.__typename)
   const Render = layout[data?.__typename]
   return (
     <div>

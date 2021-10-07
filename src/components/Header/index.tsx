@@ -28,7 +28,7 @@ const Header: FC = () => {
       </nav>
       <div className={styles._socialContainer}>
         {Social?.map(
-          (network: any, key) => <div className={styles._socialItem} key={key}><img src={`${fallbackRestUrl}${network.Icon?.url}`} alt={network.Name} /></div>
+          (network: any, key) => <div className={styles._socialItem} key={key}><img className={styles._social} src={`${fallbackRestUrl}${network.Icon?.url}`} alt={network.Name} /></div>
         )}
       </div>
     </header>

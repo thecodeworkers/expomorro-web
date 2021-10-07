@@ -9,7 +9,7 @@ import LayoutItem from './LayoutItem'
 const Layout: FC = () => {
   const router = useRouter()
   const { page: { pages } } = useSelector((state: any) => state)
-  const page = pages?.find((pag: any) => pag.URI === router.pathname)
+  const page = pages?.find((pag: any) => pag.URI === router.asPath)
   const content = orderBy(page?.Contenido, 'Posicion', 'asc')
 
   return (
