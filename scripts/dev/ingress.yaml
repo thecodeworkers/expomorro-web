@@ -26,7 +26,7 @@ spec:
               service:
                 name: expomorro-dev-web-service
                 port:
-                  number: 1337
+                  number: 3000
   tls:
     - hosts:
       - expomorro-dev-web.thecodeworkers.com
