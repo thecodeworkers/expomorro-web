@@ -31,4 +31,3 @@ spec:
     - hosts:
       - expomorro-dev-web.thecodeworkers.com
       secretName: expomorro-dev-web-thecodeworkers-com-tls
-    - hosts:
