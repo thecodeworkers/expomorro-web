@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: expomorro-dev-web
+  namespace: expomorro
+  labels:
+    app: expomorro-dev-web
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: expomorro-dev-web
+  template:
+    metadata:
+      labels:
+        app: expomorro-dev-web
+    spec:
+      imagePullSecrets:
+      - name: regcred
+      containers:
+        - name: holychicken-dev-web
+          imagePullPolicy: Always
+          image: registry.thecodeworkers.com/expomorro-web:latest-dev
+          ports:
+            - name: http-port
+              containerPort: 3000
