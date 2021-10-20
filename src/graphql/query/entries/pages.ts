@@ -36,12 +36,15 @@ const home = `
       }
       ... on ComponentFormulariosContacto{
         Posicion
-        formulario{
-          Input{
+        formulario {
+          Elements{
+            ... on ComponentFormElementInputs {
+
             Posicion
             Nombre
             Placeholder
             Type
+            }
           }
         }
         Datos{
