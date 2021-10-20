@@ -1,0 +1,73 @@
+@import '../../../styles/index.scss';
+
+._header {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 3%;
+  height: 80px;
+  background-color: #000000;
+  color: white;
+  font-family: 'NormalFont', sans-serif;
+}
+
+._logoContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+._listNav {
+  display: flex;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  li {
+    cursor: pointer;
+    margin: 0 1.5rem;
+  }
+}
+
+._socialContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+}
+
+._socialItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 0.5rem;
+  cursor: pointer;
+}
+._copyright {
+  font-size: 0.8rem;
+  text-align: center;
+}
+
+@include responsive(md) {
+  ._socialContainer {
+    display: none;
+  }
+  ._logoContainer {
+    margin-bottom: 1rem;
+  }
+
+  ._header {
+    height: auto;
+    flex-direction: column;
+    bottom: 0;
+    position: relative;
+    padding: 5%;
+  }
+  ._copyright {
+    width: 80%;
+  }
+}

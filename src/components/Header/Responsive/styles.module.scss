@@ -1,0 +1,94 @@
+._headerResponsive {
+  display: flex;
+  width: 100%;
+  -moz-box-align: center;
+  align-items: center;
+  flex-direction: column;
+  -moz-box-pack: justify;
+  justify-content: space-between;
+  padding: 0;
+  height: auto;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  bottom: 0px;
+  right: 0px;
+  font-family: 'NormalFont', sans-serif;
+}
+
+._topBorder {
+  width: 100%;
+}
+
+._closeContainer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 5%;
+  padding-bottom: 0;
+}
+
+._listNav {
+  width: 100%;
+  padding: 0;
+}
+
+._listItem {
+  padding: 5% 10%;
+  border-bottom: 2px solid;
+  cursor: pointer;
+}
+
+._bottomBorder {
+  width: 100%;
+  padding: 10%;
+  text-align: center;
+}
+
+._socialContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+._socialItem {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 1rem;
+  cursor: pointer;
+}
+
+._copyright {
+  margin-top: 0.5rem;
+  font-size: 0.8rem;
+}
+._closeButtom {
+  cursor: pointer;
+}
+
+._enterAnimation {
+  animation: enter 1s ease;
+}
+
+._leaveAnimation {
+  animation: leave 1s ease;
+}
+
+@keyframes enter {
+  from {
+    left: 100%;
+  }
+  to {
+    left: 0%;
+  }
+}
+
+@keyframes leave {
+  from {
+    left: 0%;
+  }
+  to {
+    left: -100%;
+  }
+}

@@ -1,0 +1,17 @@
+@import '../../../styles/index.scss';
+
+._mainError {
+    width: 100%;
+    height: calc(100vh - 160px);
+    display: flex;
+    flex-direction: column;
+    font-family: 'BoldFont', sans-serif;
+    align-items: center;
+    justify-content: center;
+}
+
+@include responsive(md) {
+    ._mainError {
+        height: calc(100vh - 198px);
+    }
+}
