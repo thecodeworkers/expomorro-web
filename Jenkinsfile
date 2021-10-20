@@ -34,7 +34,8 @@ pipeline {
           }
         }
         steps {
-          sh "echo URL=https://expomorro-$DEPLOY_TO-web.thecodeworkers.com >> .env"
+          sh "echo WP_API_URL=https://expomorro-$DOMAIN_TO-api.thecodeworkers.com/graphql >> .env"
+          sh "echo REST_URL=https://expomorro-$DOMAIN_TO-api.thecodeworkers.com >> .env"
           script {
             docker.withRegistry(registry, registryCredential ) {
               docker.build("expomorro-web:$BUILD_NUMBER", '-f Dockerfile.test ./').push()
