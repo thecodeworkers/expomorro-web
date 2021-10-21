@@ -9,7 +9,12 @@ pages {
       image {
         url
         ext
-        provider_metadata
+        name
+      }
+      imageResponsive {
+        url
+        ext
+        name
       }
       position
       fullWidth
