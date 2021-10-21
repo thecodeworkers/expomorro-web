@@ -1,5 +1,5 @@
-import Banner from "../../Banner";
+import Banner from '../../Banner'
 
 export const layout = {
-    ComponentBannersBanner: Banner
+  ComponentBannersBanner: Banner
 }
