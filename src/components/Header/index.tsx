@@ -1,4 +1,4 @@
-import { setMenuShow } from '@store/actions'
+import { setLoaderShow, setMenuShow } from '@store/actions'
 import { orderBy } from '@utils'
 import { fallbackRestUrl } from '@utils/path'
 import { useRouter } from 'next/dist/client/router'
@@ -24,7 +24,7 @@ const Header: FC = () => {
       <nav className={styles._navContainer}>
         <ul className={styles._listNav}>
           {Navigation?.map(
-            (nav: any, key) => <li key={key} onClick={() => router.push(nav.page.uri)}>{nav.name}</li>
+            (nav: any, key) => <li key={key} onClick={() => { router.push(nav.page.uri); dispatch(setLoaderShow(true)) }}>{nav.name}</li>
           )}
         </ul>
       </nav>

@@ -6,23 +6,25 @@ import { useSelector } from 'react-redux'
 import Error404 from '../404'
 import Footer from '../Footer'
 import Header from '../Header'
+import Loader from '../Loader'
 import LayoutItem from './LayoutItem'
 
 const Layout: FC = () => {
 
   const router = useRouter()
-  const { page: { pages }, font: { bold, normal, slim } } = useSelector((state: any) => state)
+  const { page: { pages }, font: { bold, normal, slim }, intermitence: { showLoader } } = useSelector((state: any) => state)
 
   const page = pages?.find((pag: any) => pag.uri === router.asPath)
 
   const content = orderBy(page?.content, 'position', 'asc')
 
   return (
-    <div>
-      <Header />
-      {content?.length ? content.map((data: any, index: any) => <LayoutItem data={data} key={index} />) : <Error404 />}
-      <Footer />
-      <style jsx>{`
+    <>
+      <div>
+        <Header />
+        {content?.length ? content.map((data: any, index: any) => <LayoutItem data={data} key={index} />) : <Error404 />}
+        <Footer />
+        <style jsx>{`
         @font-face {
           font-family: 'BoldFont';
           src: url('${fallbackRestUrl}${bold?.url}');
@@ -37,8 +39,10 @@ const Layout: FC = () => {
           src: url('${fallbackRestUrl}${slim?.url}');
         }
     `}
-      </style>
-    </div>
+        </style>
+      </div>
+      {showLoader && <Loader />}
+    </>
   )
 }
 

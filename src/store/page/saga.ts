@@ -4,6 +4,7 @@ import { PagesQuery, headerQuery, footerQuery, colorQuery, fontQuery } from '@gr
 import { GET_PAGE, GET_PAGE_ASYNC } from './action-types'
 import { setColor } from '../color/action'
 import { setFonts } from '../font/action'
+import { setLoaderShow } from '../intermitence/action'
 
 const getQueryPages = () => {
   return `
@@ -19,11 +20,13 @@ const getQueryPages = () => {
 
 function* getPageAsync() {
   try {
+    yield put(setLoaderShow(true))
     const response = yield call(GraphQlClient, getQueryPages(), {})
     const { pages, header, footer, colorPallete, font } = validateFetch(response)
     yield put(setColor(colorPallete))
     yield put(setFonts(font))
     yield put(actionObject(GET_PAGE_ASYNC, { pages, header, footer }))
+    yield put(setLoaderShow(false))
   } catch (err) {
     yield call(manageError, err)
   }
