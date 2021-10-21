@@ -11,13 +11,13 @@ const Header: FC = () => {
 
   const router = useRouter()
   const dispatch = useDispatch()
-  const { page: { header }, intermitence: { showMenu } } = useSelector((state: any) => state)
+  const { page: { header }, intermitence: { showMenu }, color: { primary } } = useSelector((state: any) => state)
 
   const Logo = header?.logo
   const Navigation = orderBy(header?.navigation, 'position', 'asc')
   const Social = orderBy(header?.social, 'position', 'asc')
   return header ? (
-    <header className={styles._header}>
+    <header className={styles._header} style={{ backgroundColor: primary }}>
       <div className={styles._logoContainer}>
         <img src={`${fallbackRestUrl}${Logo?.url}`} alt="Logo Principal" />
       </div>

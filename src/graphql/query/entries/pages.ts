@@ -1,4 +1,4 @@
-const home = `
+const pages = `
 pages {
   id
   name
@@ -83,4 +83,4 @@ pages {
 }
 `
 
-export default home
+export default pages
