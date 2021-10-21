@@ -5,7 +5,6 @@ import { layout } from './layout'
 
 const LayoutItem: FC<Props> = ({ data }) => {
   const Render = layout[data?.__typename]
-  console.log(data?.__typename)
   return (
     <div>
       {Render ? <Render data={data} /> : null}

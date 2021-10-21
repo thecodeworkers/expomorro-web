@@ -9,6 +9,17 @@ pipeline {
     agent any
 
     stages {
+      stage('Publish on Git') {
+        when {
+          anyOf {
+            expression { env.GIT_BRANCH == 'origin/test' }
+            expression { env.GIT_BRANCH == 'origin/dev' }
+          }
+        }
+        steps {
+          publishChecks conclusion: 'NONE', detailsURL: "https://jenkins.thecodeworkers.com/blue/organizations/jenkins/Expomorro Web - DEV - Pipeline/detail/Expomorro Web - DEV - Pipeline/$BUILD_NUMBER/pipeline", name: 'Expomorro Web - Dev - Pipeline', status: 'IN_PROGRESS', summary: 'Check Code', text: 'Testing', title: 'Testing'
+         }
+      }
       stage('Sonar Scanner') {
         steps {
           withSonarQubeEnv('Sonarqube TCW') {
@@ -29,8 +40,8 @@ pipeline {
       stage('Docker Build') {
         when {
           anyOf {
-            expression {env.GIT_BRANCH == 'origin/test'}
-            expression {env.GIT_BRANCH == 'origin/dev'}
+            expression { env.GIT_BRANCH == 'origin/test' }
+            expression { env.GIT_BRANCH == 'origin/dev' }
           }
         }
         steps {
@@ -49,14 +60,24 @@ pipeline {
       stage('Kubernetes Deploy') {
         when {
           anyOf {
-            expression {env.GIT_BRANCH == 'origin/test'}
-            expression {env.GIT_BRANCH == 'origin/dev'}
+            expression { env.GIT_BRANCH == 'origin/test' }
+            expression { env.GIT_BRANCH == 'origin/dev' }
           }
         }
         steps {
-         sh "kubectl --token $API_TOKEN --server https://10.96.0.1 --insecure-skip-tls-verify=true delete -f ./scripts/$DEPLOY_TO | true"
-         sh "kubectl --token $API_TOKEN --server https://10.96.0.1 --insecure-skip-tls-verify=true apply -f ./scripts/$DEPLOY_TO"
+          sh "kubectl --token $API_TOKEN --server https://10.96.0.1 --insecure-skip-tls-verify=true delete -f ./scripts/$DEPLOY_TO | true"
+          sh "kubectl --token $API_TOKEN --server https://10.96.0.1 --insecure-skip-tls-verify=true apply -f ./scripts/$DEPLOY_TO"
+          publishChecks detailsURL: "https://jenkins.thecodeworkers.com/blue/organizations/jenkins/Expomorro Web - DEV - Pipeline/detail/Expomorro Web - DEV - Pipeline/$BUILD_NUMBER/pipeline", name: 'Expomorro Web - Dev - Pipeline', summary: 'Deployed Code', text: 'Deployed', title: 'Deployed'
         }
+      }
+    }
+
+    post {
+      always {
+        deleteDir()
+      }
+      failure {
+        publishChecks conclusion: 'FAILURE', detailsURL: "https://jenkins.thecodeworkers.com/blue/organizations/jenkins/Expomorro Web - DEV - Pipeline/detail/Expomorro Web - DEV - Pipeline/$BUILD_NUMBER/pipeline", name: 'Expomorro Web - Dev - Pipeline', status: 'NONE', summary: 'Failed Code', text: 'Failed', title: 'Failed'
       }
     }
 }
