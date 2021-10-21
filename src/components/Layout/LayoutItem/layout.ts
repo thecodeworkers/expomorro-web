@@ -1,5 +1,7 @@
 import Banner from '../../Banner'
+import ButtonText from '../../ButtonText'
 
 export const layout = {
-  ComponentBannersBanner: Banner
+  ComponentBannersBanner: Banner,
+  ComponentSeccionesBotonTexto: ButtonText,
 }

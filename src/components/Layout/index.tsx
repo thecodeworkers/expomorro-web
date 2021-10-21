@@ -8,11 +8,12 @@ import Footer from '../Footer'
 import Header from '../Header'
 import Loader from '../Loader'
 import LayoutItem from './LayoutItem'
+import Head from 'next/head'
 
 const Layout: FC = () => {
 
   const router = useRouter()
-  const { page: { pages }, font: { bold, normal, slim }, intermitence: { showLoader } } = useSelector((state: any) => state)
+  const { page: { pages }, font: { bold, normal, slim }, color: { primary }, intermitence: { showLoader } } = useSelector((state: any) => state)
 
   const page = pages?.find((pag: any) => pag.uri === router.asPath)
 
@@ -20,11 +21,17 @@ const Layout: FC = () => {
 
   return (
     <>
+      <Head>
+        <title>Expomorro - {page?.name || '404'}</title>
+      </Head>
       <div>
         <Header />
         {content?.length ? content.map((data: any, index: any) => <LayoutItem data={data} key={index} />) : <Error404 />}
         <Footer />
         <style jsx>{`
+        div{
+          background-color: ${primary}
+        }
         @font-face {
           font-family: 'BoldFont';
           src: url('${fallbackRestUrl}${bold?.url}');
@@ -38,7 +45,7 @@ const Layout: FC = () => {
           font-family: 'SlimFont';
           src: url('${fallbackRestUrl}${slim?.url}');
         }
-    `}
+        `}
         </style>
       </div>
       {showLoader && <Loader />}

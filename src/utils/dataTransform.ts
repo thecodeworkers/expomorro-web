@@ -11,9 +11,9 @@ const _getDeep = (data, deep) => {
   return data
 }
 
-const _compareArray = (data, comparison, key) =>{
-  for(let item of data){
-    if(item[key] === comparison) return true
+const _compareArray = (data, comparison, key) => {
+  for (let item of data) {
+    if (item[key] === comparison) return true
   }
 }
 
@@ -70,61 +70,3 @@ export const simplifyArray = (array) => {
   })
 }
 
-export const productFilter = (nodes: Array<any>, comparison, key) => {
-  const nodeFilter = (node) => {
-    let validation = true
-    let validFilter = false
-    for (let type of Object.keys(comparison)) {
-      let select = getData(node, type)
-      for (let value of select) {
-        if (type !== 'attributes') {
-          for (let compare of comparison[type]) {
-            if (value[key] === compare) {
-              validFilter = true
-              break;
-            }
-          }
-        }
-        if (type === 'attributes') {
-          for (let compare of comparison[type]) {
-            for (let option of value.options) {
-              if (option.toLowerCase() === compare.toLowerCase()) {
-                validFilter = true;
-                break;
-              }
-            }
-          }
-        }
-      }
-    }
-    return validation && validFilter
-  }
-  return (nodes.length > 1) ? nodes.filter(nodeFilter) : nodes
-}
-
-export const reduceVariation = (nodes, variation) => {
-
-  const reduceFunc = (prev, next, index) => {
-    let valid = true
-    if (index === 1) {
-      for (let attr of prev.attributes.nodes)
-        for (let variant in variation) {
-          if (attr.name.includes(variant)) {
-            valid = valid && attr.value.toLowerCase() === variation[variant].toLowerCase()
-          }
-        }
-      if (valid) return prev
-    }
-    for (let attr of next.attributes.nodes) {
-      for (let variant in variation) {
-        if (attr.name.includes(variant)) {
-          const validResult = attr.value.toLowerCase() === variation[variant].toLowerCase()
-          valid = (index === 1) ? validResult : valid && validResult
-        }
-      }
-    }
-    return (valid) ? next : prev
-  }
-
-  return (nodes?.length > 1) ? nodes?.reduce(reduceFunc) : nodes[0]
-}

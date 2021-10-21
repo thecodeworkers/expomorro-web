@@ -19,7 +19,7 @@ export const createMarkup = (text) => { return { __html: text }; }
 
 export const validateFetch = ({ errors, data }) => {
   if (errors) throw errors[0].message
-  if (typeof (data) == 'undefined') throw 'Cannot connect'
+  if (typeof (data) == 'undefined') throw new Error('Cannot connect')
 
   return data
 }
@@ -68,14 +68,15 @@ export const parseHour = (data) => {
   const date = new Date(data)
   let minutes: any = date.getMinutes()
   let hour: any = date.getHours()
-  hour = hour > 12 ? hour - 12 : hour === 0 ? 12 : hour
+  const setHour = hour === 0 ? 12 : hour
+  hour = hour > 12 ? hour - 12 : setHour
   hour = hour < 10 ? `0${hour}` : hour
   minutes = minutes < 10 ? `0${minutes}` : minutes
   const afternoon = date.getHours() > 11 ? 'PM' : 'AM'
   return `${hour}:${minutes} ${afternoon}`
 }
 
-export const buildSimpleArray = (array: any = [], key: string): Array<any> => {
+export const buildSimpleArray = (key: string, array: any = []): Array<any> => {
   let newArray = []
   array.forEach((item: any, index: number) => {
     newArray[index] = item[key]
