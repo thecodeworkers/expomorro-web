@@ -9,10 +9,10 @@ import styles from './styles.module.scss'
 const FormWithList: FC<Props> = ({ data }) => {
 
   const { color: { titles, secondary, complement } } = useSelector((state: any) => state)
-  console.log(data)
+
   const form = orderBy(data?.form?.Datos, 'position', 'asc')
   const points = data?.points
-  console.log(form)
+
   return (
     <div className={styles._main}>
       <div className={styles._boxContainer}>
