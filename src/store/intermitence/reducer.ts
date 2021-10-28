@@ -8,11 +8,6 @@ import {
 const initialState = {
   showMenu: false,
   showLoader: false,
-  toast: {
-    status: 0,
-    message: '',
-    type: ''
-  },
 }
 
 const setIntermitenceReducer = (state = initialState, { type, payload }: AnyAction) => {
@@ -23,10 +18,7 @@ const setIntermitenceReducer = (state = initialState, { type, payload }: AnyActi
     case SHOW_TOAST:
       return {
         ...state,
-        toast: {
-          ...state.toast,
-          ...payload
-        }
+        ...payload
       }
     case MENU_SHOW:
       return { ...state, showMenu: payload }

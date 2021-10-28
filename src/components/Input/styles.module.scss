@@ -1,0 +1,22 @@
+@import '../../../styles/index.scss';
+
+._input {
+  width: 100%;
+  background: none;
+  border: none;
+  padding: 0.5rem;
+  border-bottom: 1px solid;
+  margin: 1rem 0;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+@include responsive(md) {
+  ._main {
+    padding: 5% 3%;
+  }
+  ._textContent {
+    margin: 1rem 0;
+    width: 100%;
+  }
+}

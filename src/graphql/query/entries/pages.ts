@@ -35,6 +35,9 @@ pages {
     }
     ... on ComponentFormulariosFormWithList {
       position
+      title
+      subtitle
+      footerText
       form {
         name
         Datos {

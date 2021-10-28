@@ -17,19 +17,6 @@ const _compareArray = (data, comparison, key) => {
   }
 }
 
-const getData = (data, type) => {
-  switch (type) {
-    case 'attributes':
-      return data['attributes']['nodes']
-    case 'categories':
-      return data['productCategories']['nodes']
-    default:
-      let newData = _getDeep(data, type)
-      if ('nodes' in newData) return newData.nodes
-      return newData
-  }
-}
-
 export const orderBy = (array, key, type = 'desc', deep = null) => {
   return array?.sort((a, b) => {
     a = _getDeep(a, deep);

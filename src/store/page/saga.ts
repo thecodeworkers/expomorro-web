@@ -21,14 +21,17 @@ const getQueryPages = () => {
 function* getPageAsync() {
   try {
     yield put(setLoaderShow(true))
+    
     const response = yield call(GraphQlClient, getQueryPages(), {})
+
     const { pages, header, footer, colorPallete, font } = validateFetch(response)
     yield put(setColor(colorPallete))
     yield put(setFonts(font))
     yield put(actionObject(GET_PAGE_ASYNC, { pages, header, footer }))
     yield put(setLoaderShow(false))
   } catch (err) {
-    yield call(manageError, err)
+    console.log(err)
+    //yield call(manageError, err)
   }
 }
 
