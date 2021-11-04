@@ -1,15 +1,13 @@
 import { AnyAction } from 'redux'
-import { GET_PAGE_ASYNC } from './action-types'
+import { SET_PORTFOLIO } from './action-types'
 
 const initialState = {
-  pages: [],
-  header: {},
-  footer: {}
+  portfolios: []
 }
 
 const reducer = (state = initialState, { type, payload }: AnyAction) => {
   switch (type) {
-    case GET_PAGE_ASYNC:
+    case SET_PORTFOLIO:
       return { ...state, ...payload }
     default:
       return state

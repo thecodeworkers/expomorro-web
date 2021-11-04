@@ -10,7 +10,7 @@ const initialState = {
   showLoader: false,
 }
 
-const setIntermitenceReducer = (state = initialState, { type, payload }: AnyAction) => {
+const reducer = (state = initialState, { type, payload }: AnyAction) => {
   switch (type) {
     case SHOW_LOADER:
       return { ...state, showLoader: payload }
@@ -29,4 +29,4 @@ const setIntermitenceReducer = (state = initialState, { type, payload }: AnyActi
   }
 }
 
-export default setIntermitenceReducer
+export default reducer

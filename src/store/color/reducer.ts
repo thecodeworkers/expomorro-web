@@ -12,7 +12,7 @@ const initialState = {
   menuText: '#FFFFFF'
 }
 
-const colorReducer = (state = initialState, { type, payload }: AnyAction) => {
+const reducer = (state = initialState, { type, payload }: AnyAction) => {
   switch (type) {
     case SET_COLOR:
       return { ...state, ...payload }
@@ -21,4 +21,4 @@ const colorReducer = (state = initialState, { type, payload }: AnyAction) => {
   }
 }
 
-export default colorReducer
+export default reducer
