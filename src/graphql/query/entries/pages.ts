@@ -82,6 +82,9 @@ pages {
       position
       text
     }
+    ... on ComponentSeccionesPortfolioOutstanding{
+      position
+    }
   }
 }
 `

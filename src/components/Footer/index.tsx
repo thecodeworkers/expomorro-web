@@ -14,8 +14,8 @@ const Footer: FC = () => {
   return footer ? (
     <header className={styles._header} style={{ backgroundColor, color: contrast }}>
       <div className={styles._logoContainer}>
-        <img className={styles._socialItem} src='/images/tcw.png' alt="Logo Principal" />
-        <img className={styles._socialItem} src='/images/banana.png' alt="Logo Principal" />
+        <img className={styles._socialItem} src='/images/tcw.png' alt='Logo Principal' />
+        <img className={styles._socialItem} src='/images/banana.png' alt='Logo Principal' />
       </div>
       <p className={styles._copyright}>{Copyright}</p>
       <div className={styles._socialContainer}>

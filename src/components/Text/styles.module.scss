@@ -1,0 +1,15 @@
+@import '../../../styles/index.scss';
+
+._main {
+  width: 100%;
+  text-align: center;
+  padding: 3%;
+}
+
+._text {
+  font-family: 'NormalFont', sans-serif;
+  font-size: 1.2rem;
+}
+
+@include responsive(md) {
+}

@@ -7,7 +7,7 @@ const initialState = {
   slim: {},
 }
 
-const fontReducer = (state = initialState, { type, payload }: AnyAction) => {
+const reducer = (state = initialState, { type, payload }: AnyAction) => {
   switch (type) {
     case SET_FONT:
       return { ...state, ...payload }
@@ -16,4 +16,4 @@ const fontReducer = (state = initialState, { type, payload }: AnyAction) => {
   }
 }
 
-export default fontReducer
+export default reducer
