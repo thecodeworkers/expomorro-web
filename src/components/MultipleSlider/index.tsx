@@ -1,7 +1,7 @@
 import React, { FC, useState } from 'react'
 import { Props } from './interface'
 import styles from './styles.module.scss'
-import Slider from "react-slick"
+import Slider from 'react-slick'
 import { fallbackRestUrl } from '@utils/path'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'

@@ -19,7 +19,7 @@ const Header: FC = () => {
   return header ? (
     <header className={styles._header} style={{ backgroundColor: primary }}>
       <div className={styles._logoContainer}>
-        <img src={`${fallbackRestUrl}${Logo?.url}`} alt="Logo Principal" />
+        <img src={`${fallbackRestUrl}${Logo?.url}`} alt='Logo Principal' />
       </div>
       <nav className={styles._navContainer}>
         <ul className={styles._listNav}>
