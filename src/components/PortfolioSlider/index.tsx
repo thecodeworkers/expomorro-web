@@ -12,8 +12,8 @@ import Button from '../Button'
 
 const PortfolioSlider: FC<Props> = ({ data }) => {
 
-  const { color: { titles }, portfolio: { portfolios } } = useSelector((state: any) => state)
-  const [index, setIndex] = useState(0)
+  const { color: { secondary, title }, portfolio: { portfolios } } = useSelector((state: any) => state)
+  const [index, setIndex] = useState(1)
 
   const settings = {
     dots: false,
@@ -23,7 +23,7 @@ const PortfolioSlider: FC<Props> = ({ data }) => {
     slidesToScroll: 2,
     nextArrow: <Arrow />,
     prevArrow: <Arrow mirror={true} />,
-    beforeChange: (current, next) => setIndex(next),
+    beforeChange: (current, next) => setIndex(next ? next : 1),
     responsive: [
       {
         breakpoint: 768,
@@ -47,14 +47,34 @@ const PortfolioSlider: FC<Props> = ({ data }) => {
                 <img className={styles._imageSlider} src={`${fallbackRestUrl}${portfolio?.principalImage?.url}`} alt={portfolio?.principalImage?.name} />
               </div>
               <div className={styles._info}>
-                <h2 className={styles._infoTitle}>{portfolio.name}</h2>
-                <p className={styles._infoDescription}>{portfolio.description}</p>
+                <h2 className={styles._infoTitle} style={{ color: title }}>{portfolio.name}</h2>
+                <p className={styles._infoDescription} style={{ color: title }}>{portfolio.description}</p>
                 <Button data={{ text: 'Ver Mas' }} />
               </div>
             </div>
           )
         })}
       </Slider>
+      <div className={styles._progressContainer}>
+        <progress value={index} max={outstanding.length / 2} />
+      </div>
+      <style jsx>{`
+        progress[value]::-webkit-progress-bar {
+          background-color: ${secondary};
+          border-radius: 15px;
+        }
+        progress[value]::-moz-progress-bar {
+          background-color: ${secondary};
+          border-radius: 15px;
+        }
+        progress[value] {
+          width: 40%;
+          height: 0.7rem;
+          background: #C4C4C4;
+          border-radius: 15px;
+        }
+        `}
+      </style>
     </div>
   )
 }

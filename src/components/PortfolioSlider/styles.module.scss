@@ -34,6 +34,13 @@
   font-family: 'NormalFont', sans-serif;
 }
 
+._progressContainer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+ 
+}
+
 @include responsive(md) {
   ._imageContainer {
     width: 100%;
@@ -45,5 +52,8 @@
   }
   ._infoDescription {
     width: 100%;
+  }
+  ._progressContainer{
+    display: none;
   }
 }
