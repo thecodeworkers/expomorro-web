@@ -1,0 +1,45 @@
+@import '../../../styles/index.scss';
+
+._main {
+  display: flex;
+  width: 100%;
+  align-content: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  padding: 5% 5%;
+}
+
+._leftSection {
+  width: 50%;
+
+  ._mainTitle {
+    margin-bottom: 5%;
+  }
+}
+
+._rightSection {
+  width: 50%;
+}
+
+._listContainer {
+  padding-left: 10%;
+  display: flex;
+
+  ._iconContainer {
+    margin: 4% 5% 5% 0;
+  }
+
+  ._mainTitle {
+    margin: 5% 0;
+  }
+}
+
+@include responsive(md) {
+  ._bannerDesktop {
+    display: none;
+  }
+  
+  ._bannerMobile {
+    display: block;
+  }
+}

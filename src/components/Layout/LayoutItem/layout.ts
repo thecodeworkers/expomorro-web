@@ -4,6 +4,8 @@ import ButtonText from '../../ButtonText'
 import PortfolioSlider from '../../PortfolioSlider'
 import MultipleSlider from '../../MultipleSlider'
 import Text from '../../Text'
+import DescriptionWithList from '../../DescriptionWithList'
+import ImageWithIconList from '../../ImageWithIconList'
 
 export const layout = {
   ComponentBannersBanner: Banner,
@@ -11,5 +13,7 @@ export const layout = {
   ComponentFormulariosFormWithList: FormWithList,
   ComponentSeccionesPortfolioOutstanding: PortfolioSlider,
   ComponentSlidersSlider: MultipleSlider,
-  ComponentTextosText: Text
+  ComponentTextosText: Text,
+  ComponentSeccionesDescriptionWithList: DescriptionWithList,
+  ComponentSeccionesImageWithIconList: ImageWithIconList
 }
