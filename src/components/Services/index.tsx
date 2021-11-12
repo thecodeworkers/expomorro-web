@@ -8,7 +8,7 @@ import styles from './styles.module.scss'
 const Services: FC<Props> = ({ data }) => {
 
   const { color: { titles } } = useSelector((state: any) => state)
-  console.log(data)
+
   const services = orderBy(data?.service, 'where', 'asc') || []
   return (
     <div className={styles._main}>
