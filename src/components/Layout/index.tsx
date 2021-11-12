@@ -15,7 +15,7 @@ const Layout: FC = () => {
   const router = useRouter()
   const { page: { pages }, font: { bold, normal, slim }, color: { primary }, intermitence: { showLoader } } = useSelector((state: any) => state)
 
-  const page = pages?.find((pag: any) => pag.uri === router.asPath)
+  const page = pages?.find((pag: any) => pag.uri === router?.asPath)
 
   const content = orderBy(page?.content, 'position', 'asc')
 

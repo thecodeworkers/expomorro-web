@@ -6,6 +6,7 @@ import MultipleSlider from '../../MultipleSlider'
 import Text from '../../Text'
 import DescriptionWithList from '../../DescriptionWithList'
 import ImageWithIconList from '../../ImageWithIconList'
+import Services from '../../Services'
 
 export const layout = {
   ComponentBannersBanner: Banner,
@@ -15,5 +16,6 @@ export const layout = {
   ComponentSlidersSlider: MultipleSlider,
   ComponentTextosText: Text,
   ComponentSeccionesDescriptionWithList: DescriptionWithList,
-  ComponentSeccionesImageWithIconList: ImageWithIconList
+  ComponentSeccionesImageWithIconList: ImageWithIconList,
+  ComponentSeccionesServices: Services
 }

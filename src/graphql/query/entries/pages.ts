@@ -16,6 +16,7 @@ pages {
         ext
         name
       }
+      type
       position
       fullWidth
     }
@@ -69,7 +70,21 @@ pages {
         }
       }
     }
-
+    ... on ComponentSeccionesServices {
+      service {
+        service {
+          icon {
+            url
+            name
+            ext
+          }
+          title
+          description
+        }
+        where
+      }
+      position
+    }
     ... on ComponentSlidersSlider {
       position
       Slide {
