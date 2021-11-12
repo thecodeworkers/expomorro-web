@@ -35,11 +35,22 @@
 }
 
 @include responsive(md) {
-  ._bannerDesktop {
-    display: none;
+  ._main {
+    flex-wrap: wrap;
+    padding: 5% 3%;
   }
-  
-  ._bannerMobile {
-    display: block;
+
+  ._leftSection {
+    width: 100%;
+  }
+
+  ._rightSection {
+    width: 100%;
+    padding: 5%;
+  }
+
+  ._listContainer {
+    padding-left: 0;
+    display: flex;
   }
 }
