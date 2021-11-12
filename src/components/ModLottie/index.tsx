@@ -1,5 +1,6 @@
 import React, { FC, useEffect, useState } from 'react'
-import Lottie from 'react-lottie';
+import Lottie from 'react-lottie'
+
 const ModLottie: FC<any> = ({ data, options = { autoplay: true, loop: true }, className }) => {
 
   const [animation, setAnimation] = useState(null)
