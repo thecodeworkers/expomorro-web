@@ -59,17 +59,25 @@ const PortfolioSlider: FC<Props> = ({ data }) => {
         <progress value={index} max={outstanding.length / 2} />
       </div>
       <style jsx>{`
-        progress[value]::-webkit-progress-bar {
-          background-color: ${secondary};
+        progress {
+          -webkit-appearance: none;
+        }
+        ::-webkit-progress-bar {
+          background-color: #C4C4C4;
           border-radius: 15px;
         }
+        progress::-webkit-progress-value { 
+          background:${secondary}; 
+
+          border-radius: 15px;
+      }
         progress[value]::-moz-progress-bar {
           background-color: ${secondary};
           border-radius: 15px;
         }
         progress[value] {
           width: 40%;
-          height: 0.7rem;
+          height: 0.35rem;
           background: #C4C4C4;
           border-radius: 15px;
         }

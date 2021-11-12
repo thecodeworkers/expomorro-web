@@ -1,3 +1,5 @@
 declare module '*.scss'
 declare module '*.svg'
 declare module 'lodash'
+declare module 'http://localhost:1337/uploads/*.json'
+declare module '*.json'

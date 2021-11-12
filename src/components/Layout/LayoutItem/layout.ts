@@ -4,6 +4,7 @@ import ButtonText from '../../ButtonText'
 import PortfolioSlider from '../../PortfolioSlider'
 import MultipleSlider from '../../MultipleSlider'
 import Text from '../../Text'
+import Services from '../../Services'
 
 export const layout = {
   ComponentBannersBanner: Banner,
@@ -11,5 +12,6 @@ export const layout = {
   ComponentFormulariosFormWithList: FormWithList,
   ComponentSeccionesPortfolioOutstanding: PortfolioSlider,
   ComponentSlidersSlider: MultipleSlider,
-  ComponentTextosText: Text
+  ComponentTextosText: Text,
+  ComponentSeccionesServices: Services
 }
