@@ -10,8 +10,6 @@ const DescriptionWithList: FC<Props> = ({ data }) => {
   const description = data?.description
   const list = data?.point
 
-  console.log(data)
-
   return (
     <section className={styles._main}>
       <div className={styles._leftSection}>
