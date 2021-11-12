@@ -1,4 +1,4 @@
-import { setMenuShow } from '@store/actions'
+import { setLoaderShow, setMenuShow } from '@store/actions'
 import { orderBy } from '@utils'
 import { fallbackRestUrl } from '@utils/path'
 import { useRouter } from 'next/dist/client/router'
@@ -27,7 +27,11 @@ const Responsive: FC = () => {
         <nav className={styles._navContainer}>
           <ul className={styles._listNav}>
             {Navigation?.map(
-              (nav: any, key) => <li className={styles._listItem} style={{ color: menuText, borderColor: menuText }} key={key} onClick={() => router.push(nav?.page?.uri)}>{nav?.name}</li>
+              (nav: any, key) => <li className={styles._listItem} style={{ color: menuText, borderColor: menuText }} key={key} onClick={() => {
+                router.push(nav?.page?.uri)
+                dispatch(setMenuShow(false))
+                dispatch(setLoaderShow(true))
+              }}>{nav?.name}</li>
             )}
           </ul>
         </nav>
