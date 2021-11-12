@@ -7,13 +7,16 @@
   justify-content: space-between;
   box-sizing: border-box;
   padding: 5% 5%;
+  font-family: 'SlimFont', sans-serif;
 }
 
 ._leftSection {
   width: 50%;
+  white-space: pre-line;
 
   ._mainTitle {
     margin-bottom: 5%;
+    font-weight: 900;
   }
 }
 

@@ -4,7 +4,6 @@ import { Props } from './interface'
 import styles from './styles.module.scss'
 
 const ImageWithIconList: FC<Props> = ({ data }) => {
-  // console.log("data", data)
 
   const image = data?.outstanding
   const imageResponsive = data?.responsive
@@ -24,7 +23,6 @@ const ImageWithIconList: FC<Props> = ({ data }) => {
         <div className={styles._listContainer}>
           {
             list.map((element, index) => {
-              console.log("element", element)
               return (
                 <div className={styles._elementContainer} key={index}>
                   <img src={`${fallbackRestUrl}${element.icon?.url}`} alt={`icon-${index}`} />

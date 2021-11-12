@@ -14,7 +14,7 @@ const DescriptionWithList: FC<Props> = ({ data }) => {
     <section className={styles._main}>
       <div className={styles._leftSection}>
         <h2 className={styles._mainTitle}>{title}</h2>
-        <div dangerouslySetInnerHTML={createMarkup(description)}></div>
+        <div>{description}</div>
       </div>
       <div className={styles._rightSection}>
         {
