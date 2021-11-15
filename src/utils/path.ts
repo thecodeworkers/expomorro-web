@@ -1,5 +1,4 @@
-// export const fallbackRestUrl: string = 'https://expomorro-dev-api.thecodeworkers.com'
-export const fallbackRestUrl: string = 'http://localhost:1337'
+export const fallbackRestUrl: string = 'https://expomorro-dev-api.thecodeworkers.com'
 const fallbackUrl: string = 'https://expomorro-dev-api.thecodeworkers.com/graphql'
 
 export default fallbackUrl
