@@ -4,10 +4,12 @@ import Lottie from 'react-lottie'
 const ModLottie: FC<any> = ({ data, options = { autoplay: true, loop: true }, className }) => {
 
   const [animation, setAnimation] = useState(null)
-  
+
   const impo = async () => {
+    console.log(data)
     const result = await fetch(data)
-    const json = await result.json()
+    console.log(result)
+    const json = await result?.json()
     setAnimation(json)
   }
 
@@ -17,7 +19,7 @@ const ModLottie: FC<any> = ({ data, options = { autoplay: true, loop: true }, cl
 
   options.animationData = animation
 
-  return (
+  return animation ? (
     <div className={className}>
       <Lottie options={options} />
       <style jsx>
@@ -48,7 +50,7 @@ const ModLottie: FC<any> = ({ data, options = { autoplay: true, loop: true }, cl
         `}
       </style>
     </div>
-  )
+  ) : null
 }
 
 export default ModLottie

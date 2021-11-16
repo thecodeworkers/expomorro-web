@@ -100,6 +100,45 @@ pages {
     ... on ComponentSeccionesPortfolioOutstanding{
       position
     }
+    ... on ComponentSeccionesDescriptionWithList {
+      position
+      description
+      title
+      point { 
+        position
+        direction
+        title
+        description
+        icon {
+          url
+          ext
+          name
+        }
+      }
+    }
+    ... on ComponentSeccionesImageWithIconList {
+      position
+      title
+      outstanding {
+        url
+        ext
+        name
+      }
+      responsive {
+        url
+        ext
+        name
+      }
+      values {
+        title
+        description
+        icon {
+          url
+          ext
+          name
+        }
+      }
+    }
   }
 }
 `

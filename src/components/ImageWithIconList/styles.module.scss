@@ -1,0 +1,124 @@
+@import '../../../styles/index.scss';
+
+._main {
+  display: flex;
+  font-family: 'SlimFont', sans-serif;
+}
+
+._leftSection {
+  padding-left: 3%;
+
+  ._imageContainer {
+    width: 50vw;
+    height: 97vh;
+  }
+}
+
+._rightSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  ._title {
+    margin-bottom: 10%;
+
+    font-family: 'BoldFont', sans-serif;
+  }
+}
+
+._listContainer {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+._elementContainer {
+  width: 50%;
+  margin-bottom: 5%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 5%;
+
+  ._mainTitle {
+    margin: 5% 0;
+    font-family: 'BoldFont', sans-serif;
+  }
+
+  ._description {
+    text-align: center;
+    width: 80%;
+  }
+}
+
+._imageDesktop {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+._imageMobile {
+  display: none;
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+@include responsive(md) {
+  ._main {
+    display: flex;
+    flex-direction: column;
+  }
+
+  ._leftSection {
+    padding: 0 3%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    ._imageContainer {
+      width: 100%;
+      height: 40vh;
+    }
+  }
+
+  ._rightSection {
+    ._title {
+      margin: 10% 0 20% 0;
+      text-align: center;
+      width: 75%;
+    }
+  }
+
+  ._elementContainer {
+    width: 100%;
+    margin-bottom: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 5%;
+  
+    ._mainTitle {
+      margin: 5% 0;
+    }
+  
+    ._description {
+      text-align: center;
+      width: 80%;
+    }
+  }
+
+  ._imageDesktop {
+    display: none;
+  }
+  
+  ._imageMobile {
+    display: block;
+  }
+}

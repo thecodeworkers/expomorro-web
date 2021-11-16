@@ -4,6 +4,8 @@ import ButtonText from '../../ButtonText'
 import PortfolioSlider from '../../PortfolioSlider'
 import MultipleSlider from '../../MultipleSlider'
 import Text from '../../Text'
+import DescriptionWithList from '../../DescriptionWithList'
+import ImageWithIconList from '../../ImageWithIconList'
 import Services from '../../Services'
 
 export const layout = {
@@ -13,5 +15,7 @@ export const layout = {
   ComponentSeccionesPortfolioOutstanding: PortfolioSlider,
   ComponentSlidersSlider: MultipleSlider,
   ComponentTextosText: Text,
+  ComponentSeccionesDescriptionWithList: DescriptionWithList,
+  ComponentSeccionesImageWithIconList: ImageWithIconList,
   ComponentSeccionesServices: Services
 }

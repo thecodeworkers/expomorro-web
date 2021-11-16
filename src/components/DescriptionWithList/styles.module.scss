@@ -1,0 +1,63 @@
+@import '../../../styles/index.scss';
+
+._main {
+  display: flex;
+  width: 100%;
+  align-content: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  padding: 5% 5%;
+  font-family: 'SlimFont', sans-serif;
+}
+
+._leftSection {
+  width: 50%;
+  white-space: pre-line;
+
+  ._mainTitle {
+    margin-bottom: 5%;
+    font-weight: 900;
+
+    font-family: 'BoldFont', sans-serif;
+  }
+}
+
+._rightSection {
+  width: 50%;
+}
+
+._listContainer {
+  padding-left: 10%;
+  display: flex;
+
+  ._iconContainer {
+    margin: 4% 5% 5% 0;
+  }
+
+  ._mainTitle {
+
+    font-family: 'BoldFont', sans-serif;
+    margin: 5% 0;
+  }
+}
+
+@include responsive(md) {
+  ._main {
+    flex-wrap: wrap;
+    padding: 5% 3%;
+  }
+
+  ._leftSection {
+    width: 100%;
+  }
+
+  ._rightSection {
+    width: 100%;
+    padding: 5%;
+  }
+
+  ._listContainer {
+    padding-left: 0;
+    display: flex;
+  }
+}
