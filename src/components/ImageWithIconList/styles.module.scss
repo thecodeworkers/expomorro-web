@@ -69,7 +69,6 @@
   background-size: cover;
 }
 
-
 @include responsive(md) {
   ._main {
     display: flex;
@@ -90,7 +89,7 @@
 
   ._rightSection {
     ._title {
-      margin: 10% 0 20% 0;
+      margin: 5% 0;
       text-align: center;
       width: 75%;
     }
@@ -104,11 +103,11 @@
     justify-content: center;
     align-items: center;
     padding: 0 5%;
-  
+
     ._mainTitle {
       margin: 5% 0;
     }
-  
+
     ._description {
       text-align: center;
       width: 80%;
@@ -118,7 +117,7 @@
   ._imageDesktop {
     display: none;
   }
-  
+
   ._imageMobile {
     display: block;
   }
