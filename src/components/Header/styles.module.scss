@@ -45,6 +45,12 @@
   margin: 0 0.5rem;
   cursor: pointer;
 }
+
+._listItem{
+  transition: all 1s;
+  border-bottom: 0.18rem solid transparent;
+}
+
 ._mobileIcon {
   cursor: pointer;
 }

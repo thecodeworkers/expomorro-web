@@ -13,17 +13,21 @@
 ._leftSection {
   width: 50%;
   white-space: pre-line;
-
-  ._mainTitle {
-    margin-bottom: 5%;
-    font-weight: 900;
-
-    font-family: 'BoldFont', sans-serif;
-  }
 }
 
+._mainTitle {
+  margin-bottom: 5%;
+  font-family: 'BoldFont', sans-serif;
+}
+
+._description {
+  font-size: 1.2rem;
+  font-family: 'RomanFont', sans-serif;
+}
 ._rightSection {
   width: 50%;
+  box-sizing: border-box;
+  padding: 0% 5%;
 }
 
 ._listContainer {
@@ -35,7 +39,6 @@
   }
 
   ._mainTitle {
-
     font-family: 'BoldFont', sans-serif;
     margin: 5% 0;
   }

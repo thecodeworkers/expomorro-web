@@ -13,7 +13,7 @@ import Head from 'next/head'
 const Layout: FC = () => {
 
   const router = useRouter()
-  const { page: { pages }, font: { bold, normal, slim }, color: { primary }, intermitence: { showLoader } } = useSelector((state: any) => state)
+  const { page: { pages }, font: { bold, normal, slim, roman }, color: { primary }, intermitence: { showLoader } } = useSelector((state: any) => state)
 
   const page = pages?.find((pag: any) => pag.uri === router?.asPath)
 
@@ -25,7 +25,6 @@ const Layout: FC = () => {
         <title>Expomorro - {page?.name || '404'}</title>
       </Head>
       <div>
-        <Header />
         {content?.length ? content.map((data: any, index: any) => <LayoutItem data={data} key={index} />) : <Error404 />}
         <Footer />
         <style jsx>{`
@@ -44,6 +43,10 @@ const Layout: FC = () => {
         @font-face {
           font-family: 'SlimFont';
           src: url('${fallbackRestUrl}${slim?.url}');
+        }
+        @font-face {
+          font-family: 'RomanFont';
+          src: url('${fallbackRestUrl}${roman?.url}');
         }
         `}
         </style>
