@@ -12,7 +12,9 @@ const EventList: FC<Props> = ({ data }) => {
 
   const { portfolio: { portfolios = [] } } = useSelector((state: any) => state)
 
-  const portfolioData = data.fullList ? portfolios : portfolios.sort(() => Math.random() - Math.random()).slice(0, 9)
+  const random1 = Math.floor(Math.random() * 100) + 1;
+  const random2 = Math.floor(Math.random() * 100) + 1;
+  const portfolioData = data.fullList ? portfolios : portfolios.sort(() => random1 - random2).slice(0, 9)
 
   const boxFunction = () => {
     setWidth(boxElement.current ? boxElement.current.clientWidth : 0)
