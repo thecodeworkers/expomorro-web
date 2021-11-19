@@ -24,9 +24,7 @@ const EventList: FC<Props> = ({ data }) => {
     boxFunction()
   }, [boxElement])
 
-  if (typeof window !== "undefined") {
-    window.addEventListener('resize', boxFunction)
-  }
+  if (typeof window !== 'undefined') window.addEventListener('resize', boxFunction)
 
   return (
     <div className={styles._main}>
