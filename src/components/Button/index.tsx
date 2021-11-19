@@ -8,7 +8,7 @@ const Button: FC<Props> = ({ data }) => {
   const { color: { secondary, primary } } = useSelector((state: any) => state)
 
   return (
-    <button className={styles._button} style={{ backgroundColor: secondary, color: primary }} onClick={() => { }}>
+    <button className={styles._button} style={{ backgroundColor: secondary, color: primary, width: data.large ? '600px' : '300px' }} onClick={() => { }}>
       {data?.text}
     </button>
   )
