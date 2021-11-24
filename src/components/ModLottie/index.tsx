@@ -6,9 +6,7 @@ const ModLottie: FC<any> = ({ data, options = { autoplay: true, loop: true }, cl
   const [animation, setAnimation] = useState(null)
 
   const impo = async () => {
-    console.log(data)
     const result = await fetch(data)
-    console.log(result)
     const json = await result?.json()
     setAnimation(json)
   }

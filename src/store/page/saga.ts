@@ -25,8 +25,8 @@ function* getPageAsync() {
     yield put(setLoaderShow(true))
 
     const response = yield call(GraphQlClient, getQueryPages(), {})
-
     const { pages, header, footer, colorPallete, font, portfolios } = validateFetch(response)
+    // console.log("portfolios", portfolios)
     if (colorPallete) yield put(setColor(colorPallete))
     if (font) yield put(setFonts(font))
     if (portfolios) yield put(setPortfolio({ portfolios }))
