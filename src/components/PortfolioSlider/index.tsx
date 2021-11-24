@@ -23,7 +23,7 @@ const PortfolioSlider: FC<Props> = ({ data }) => {
     slidesToScroll: 2,
     nextArrow: <Arrow />,
     prevArrow: <Arrow mirror={true} />,
-    beforeChange: (current, next) => setIndex(next ? next : 1),
+    beforeChange: (current, next) => setIndex(next ? next > 2 ? next - 1 : next : 1),
     responsive: [
       {
         breakpoint: 768,

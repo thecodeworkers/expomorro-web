@@ -10,6 +10,7 @@ const Services: FC<Props> = ({ data }) => {
   const { color: { titles } } = useSelector((state: any) => state)
 
   const services = orderBy(data?.service, 'where', 'asc') || []
+  
   return (
     <div className={styles._main}>
       {services.map((service: any, index: any) => (

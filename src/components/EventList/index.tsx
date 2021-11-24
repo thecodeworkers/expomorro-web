@@ -29,13 +29,14 @@ const EventList: FC<Props> = ({ data }) => {
   return (
     <div className={styles._main}>
       {portfolioData.map((portfolio: any, index: any) => {
+        const difference = portfolio?.principalImage?.width > portfolio?.principalImage?.height
         return (
           <div ref={boxElement} key={index} className={styles._portfolioContainer} style={{ height: width }}>
             <div className={styles._hoverShadow}>
               <p>{portfolio?.name}</p>
             </div>
             <div className={styles._imageContainer} style={{ height: width }}>
-              <img className={styles._image} src={`${fallbackRestUrl}${portfolio?.principalImage?.url}`} alt={portfolio?.principalImage?.name} />
+              <img className={styles._image} src={`${fallbackRestUrl}${portfolio?.principalImage?.url}`} style={{ width: (difference) ? 'auto' : '100%', height: (difference) ? '100%' : 'auto' }} alt={portfolio?.principalImage?.name} />
             </div>
           </div>
         )

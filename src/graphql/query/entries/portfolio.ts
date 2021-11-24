@@ -8,6 +8,8 @@ portfolios {
     ext
     url
     name
+    height
+    width
   }
   events
   fields {
