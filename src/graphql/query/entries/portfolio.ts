@@ -12,7 +12,7 @@ portfolios {
     width
   }
   events
-  fields {
+  content {
     __typename
     ... on ComponentTextosText {
       text

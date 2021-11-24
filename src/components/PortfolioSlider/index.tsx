@@ -1,5 +1,5 @@
 import React, { FC, useState } from 'react'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { Props } from './interface'
 import styles from './styles.module.scss'
 import Slider from 'react-slick'
@@ -9,12 +9,15 @@ import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 import Arrow from './Arrow'
 import Button from '../Button'
+import { useRouter } from 'next/dist/client/router'
+import { setLoaderShow } from '@store/actions'
 
 const PortfolioSlider: FC<Props> = ({ data }) => {
 
+  const router = useRouter()
   const { color: { secondary, title }, portfolio: { portfolios } } = useSelector((state: any) => state)
   const [index, setIndex] = useState(1)
-
+  const dispatch = useDispatch()
   const settings = {
     dots: false,
     infinite: true,
@@ -49,7 +52,7 @@ const PortfolioSlider: FC<Props> = ({ data }) => {
               <div className={styles._info}>
                 <h2 className={styles._infoTitle} style={{ color: title }}>{portfolio.name}</h2>
                 <p className={styles._infoDescription} style={{ color: title }}>{portfolio.description}</p>
-                <Button data={{ text: 'Ver Mas' }} />
+                {!!portfolio.content?.length && <Button data={{ text: 'Ver Mas' }} onClick={() => { router.push(`/eventos/${portfolio?.uri}`); dispatch(setLoaderShow(true)) }} />}
               </div>
             </div>
           )
