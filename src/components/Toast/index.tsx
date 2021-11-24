@@ -27,16 +27,14 @@ const Toast = () => {
   }, [])
 
   const returnIcon = (icon) => {
-    switch (icon) {
-      case 'check':
-        return 'images/icons/check.svg'
-      case 'error':
-        return 'images/icons/error.svg'
-      case 'warning':
-        return 'images/icons/warning.svg'
-      default:
-        return 'images/icons/check.svg'
+
+    const values = {
+      check: 'images/icons/check.svg',
+      error: 'images/icons/error.svg',
+      warning: 'images/icons/warning.svg'
     }
+
+    return values[icon] || 'images/icons/check.svg'
   }
 
   return (
