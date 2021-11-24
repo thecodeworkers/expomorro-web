@@ -15,7 +15,7 @@ const Toast = () => {
     if (status === 1) {
       timeout = setTimeout(() => {
         dispatch(setToast(toast?.type, toast?.text, 2))
-      }, 2000);
+      }, 2000)
 
       return styles._toastIn
     }
@@ -30,13 +30,10 @@ const Toast = () => {
     switch (icon) {
       case 'check':
         return 'images/icons/check.svg'
-
       case 'error':
         return 'images/icons/error.svg'
-
       case 'warning':
         return 'images/icons/warning.svg'
-
       default:
         return 'images/icons/check.svg'
     }
@@ -52,4 +49,4 @@ const Toast = () => {
   )
 }
 
-export default Toast;
+export default Toast

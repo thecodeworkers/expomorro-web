@@ -29,8 +29,8 @@ const FormWithList: FC<Props> = ({ data }) => {
   }, [contentRef])
 
   const InputData = (data) => {
-    const name = data?.target?.name;
-    const value = data?.target?.value;
+    const name = data?.target?.name
+    const value = data?.target?.value
 
     const newFormData = formData?.data
 
