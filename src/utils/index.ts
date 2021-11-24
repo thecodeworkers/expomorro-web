@@ -1,5 +1,6 @@
 export { Filter } from './filter'
 export { default as GraphQlClient } from './graphqlClient'
+export { default as RestClient } from './restClient'
 export * from './common'
 export * from './dataTransform'
 export * from './regex'
