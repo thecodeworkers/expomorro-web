@@ -139,6 +139,19 @@ pages {
         }
       }
     }
+    ... on ComponentSeccionesTitleWithButton {
+      position
+      Button {
+        text
+        Link
+      }
+      Title
+      description
+    }
+    ... on ComponentSeccionesEventList{
+      position
+      fullList
+    }
   }
 }
 `

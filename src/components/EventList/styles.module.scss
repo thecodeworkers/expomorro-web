@@ -1,0 +1,61 @@
+@import '../../../styles/index.scss';
+
+._main {
+  width: 100%;
+  padding: 0% 3%;
+  padding-top: 3%;
+  box-sizing: border-box;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+._portfolioContainer {
+  width: 25%;
+  position: relative;
+}
+._imageContainer {
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+._image {
+  height: 100%;
+}
+._hoverShadow {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-family: 'BoldFont', sans-serif;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: all 0.5s;
+  text-align: center;
+  p {
+    display: none;
+    transition: all 0.5s;
+  }
+  &:hover {
+    background-color: #12121299;
+    p {
+      display: block;
+    }
+  }
+}
+
+@include responsive(md) {
+  ._portfolioContainer {
+    width: 50%;
+  }
+}

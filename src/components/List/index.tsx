@@ -19,7 +19,7 @@ const List: FC<Props> = ({ data }) => {
             </div>
             <div className={styles._textContainer} style={(item.direction === 'vertical') ? {} : { display: 'flex' }}>
               <h3 className={styles._title} style={(item.direction === 'vertical') ? { color: titles } : { color: titles, width: '8rem' }}>{item?.title}</h3>
-              <p className={styles._description} style={(item.direction === 'vertical') ? { color: body } : { width: 'calc(100% - 8rem)', color: body }}>{item?.description}</p>
+              <p className={styles._description} style={(item.direction === 'vertical') ? { color: body, marginTop: '1.5rem' } : { width: 'calc(100% - 8rem)', color: body }}>{item?.description}</p>
             </div>
           </div>
         )

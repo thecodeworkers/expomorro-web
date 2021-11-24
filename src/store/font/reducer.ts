@@ -5,6 +5,7 @@ const initialState = {
   bold: {},
   normal: {},
   slim: {},
+  roman: {}
 }
 
 const reducer = (state = initialState, { type, payload }: AnyAction) => {

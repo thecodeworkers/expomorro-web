@@ -11,7 +11,7 @@ const Header: FC = () => {
 
   const router = useRouter()
   const dispatch = useDispatch()
-  const { page: { header }, intermitence: { showMenu }, color: { primary } } = useSelector((state: any) => state)
+  const { page: { header }, intermitence: { showMenu }, color: { primary, complement } } = useSelector((state: any) => state)
 
   const Logo = header?.logo
   const Navigation = orderBy(header?.navigation, 'position', 'asc')
@@ -24,7 +24,7 @@ const Header: FC = () => {
       <nav className={styles._navContainer}>
         <ul className={styles._listNav}>
           {Navigation?.map(
-            (nav: any, key) => <li key={key} onClick={() => { router.push(nav.page.uri); dispatch(setLoaderShow(true)) }}>{nav.name}</li>
+            (nav: any, key) => <li className={styles._listItem} style={{ borderBottomColor: (nav.page.uri === router.asPath) ? complement : 'transparent' }} key={key} onClick={() => { router.push(nav.page.uri); dispatch(setLoaderShow(true)) }}>{nav.name}</li>
           )}
         </ul>
       </nav>
