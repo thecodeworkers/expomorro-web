@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux'
 import { Props } from './interface'
 import styles from './styles.module.scss'
 
-const Button: FC<Props> = ({ data, onClick = () => { }, disabled = false }) => {
+const Button: FC<Props> = ({ data, onClick = () => { window.open(data?.Link) }, disabled = false }) => {
 
   const { color: { secondary, primary } } = useSelector((state: any) => state)
 
