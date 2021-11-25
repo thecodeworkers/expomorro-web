@@ -18,7 +18,7 @@ spec:
       imagePullSecrets:
       - name: regcred
       containers:
-        - name: holychicken-dev-web
+        - name: expomorro-dev-web
           imagePullPolicy: Always
           image: registry.thecodeworkers.com/expomorro-web:latest-dev
           ports:

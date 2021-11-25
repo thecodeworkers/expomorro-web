@@ -44,10 +44,12 @@ const PortfolioSlider: FC<Props> = ({ data }) => {
     <div className={styles._main}>
       <Slider {...settings} >
         {outstanding && outstanding.map((portfolio: any, index: any) => {
+          const difference = portfolio?.principalImage?.width > portfolio?.principalImage?.height
           return (
             <div key={index}>
               <div className={styles._imageContainer}>
                 <img className={styles._imageSlider} src={`${fallbackRestUrl}${portfolio?.principalImage?.url}`} alt={portfolio?.principalImage?.name} />
+
               </div>
               <div className={styles._info}>
                 <h2 className={styles._infoTitle} style={{ color: title }}>{portfolio.name}</h2>
