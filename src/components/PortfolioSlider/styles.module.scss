@@ -44,7 +44,7 @@
 @include responsive(md) {
   ._imageContainer {
     width: 100%;
-    max-height: 90vh;
+    max-height: 50vw;
     overflow: hidden;
     display: flex;
     align-items: center;
