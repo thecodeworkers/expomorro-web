@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux'
 import { Props } from './interface'
 import styles from './styles.module.scss'
 
-const List: FC<Props> = ({ data }) => {
+const List: FC<Props> = ({ data, align = false }) => {
 
   const { color: { titles, body } } = useSelector((state: any) => state)
   const point = orderBy(data, 'position', 'asc')
@@ -13,7 +13,7 @@ const List: FC<Props> = ({ data }) => {
     <div className={styles._main}>
       {point?.map((item, index) => {
         return (
-          <div className={styles._pointContainer} key={index}>
+          <div className={styles._pointContainer} style={{ margin: (align) ? '4rem 0px' : '3rem 0px' }} key={index} >
             <div className={styles._iconContainer}>
               <img src={`${fallbackRestUrl}${item?.icon?.url}`} alt={item?.icon?.name} />
             </div>
@@ -24,7 +24,7 @@ const List: FC<Props> = ({ data }) => {
           </div>
         )
       })}
-    </div>
+    </div >
   )
 }
 

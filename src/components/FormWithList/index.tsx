@@ -13,7 +13,7 @@ const FormWithList: FC<Props> = ({ data }) => {
   const contentRef = useRef(null)
   const [height, setHeight] = useState(0)
   const [formData, setFormData] = useState({ data: [], actualSelected: '' })
-  const [validData, setValidData] = useState(false)
+  const [validData, setValidData] = useState<boolean>(false)
   const dispatch = useDispatch()
   const { color: { titles, secondary, complement } } = useSelector((state: any) => state)
 
@@ -80,7 +80,7 @@ const FormWithList: FC<Props> = ({ data }) => {
             </div>
           </div>
           <div className={styles._pointsContainer} style={{ paddingTop: height }}>
-            <List data={points} />
+            <List data={points} align={true} />
           </div>
         </div>
 
