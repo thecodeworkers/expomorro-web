@@ -24,7 +24,7 @@ spec:
             path: /
             backend:
               service:
-                name: expomorro-stg-dev-service
+                name: expomorro-stg-web-service
                 port:
                   number: 3000
     - host: expomorro.com.ve
@@ -53,7 +53,7 @@ spec:
       secretName: expomorro-stg-web-thecodeworkers-com-tls
     - hosts:
         - expomorro.com.ve
-      secretName: expomorro-stg-web-thecodeworkers-com-tls
+      secretName: expomorro-com-ve-tls
     - hosts:
         - www.expomorro.com.ve
-      secretName: expomorro-stg-dev-thecodeworkers-com-tls
+      secretName: www-expomorro-com-ve-tls
