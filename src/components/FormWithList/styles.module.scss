@@ -65,12 +65,14 @@
   flex-direction: column;
   justify-content: flex-end;
 }
-
+._buttonContainer{
+  margin-bottom: 4rem;
+}
 ._pointsContainer {
   padding: 5%;
   width: 50%;
   display: flex;
-  align-items: flex-end;
+  align-items: flex-start;
 }
 @include responsive(md) {
   ._contentContainer {

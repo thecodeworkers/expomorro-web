@@ -8,9 +8,11 @@ portfolios {
     ext
     url
     name
+    height
+    width
   }
   events
-  fields {
+  content {
     __typename
     ... on ComponentTextosText {
       text
