@@ -9,6 +9,8 @@ import ImageWithIconList from '../../ImageWithIconList'
 import Services from '../../Services'
 import EventList from '../../EventList'
 import TitleButton from '../../TitleButton'
+import EventBodyInfo from '../../EventBodyInfo'
+import EventImagePreview from '../../EventImagePreview'
 
 export const layout = {
   ComponentBannersBanner: Banner,
@@ -21,5 +23,7 @@ export const layout = {
   ComponentSeccionesImageWithIconList: ImageWithIconList,
   ComponentSeccionesServices: Services,
   ComponentSeccionesEventList: EventList,
-  ComponentSeccionesTitleWithButton: TitleButton
+  ComponentSeccionesTitleWithButton: TitleButton,
+  ComponentSeccionesColumTexts: EventBodyInfo,
+  ComponentSeccionesImagePreview: EventImagePreview
 }
