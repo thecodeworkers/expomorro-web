@@ -21,6 +21,15 @@ const EventSlider: FC<Props> = ({ data }) => {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
+    responsive: [
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1
+        }
+      },
+    ]
   }
 
   const settingsResponsive = {
@@ -33,8 +42,8 @@ const EventSlider: FC<Props> = ({ data }) => {
   }
   
   return (
-    <div className={styles._main}>
-      <div className={styles._desktop}>
+    <>
+      <div className={styles._main}>
         <Slider 
           ref={slider => (customSlider.current = slider)}
           nextArrow={ <NextArrow reference={customSlider} arrow={data?.rightArrow} />}
@@ -43,30 +52,25 @@ const EventSlider: FC<Props> = ({ data }) => {
           {slider && slider.map((slide: any, index: any) => {
             return (
               <div key={index}>
-                <div className={styles._itemContainer}>
-                  <img className={styles._imageSlider} src={`${fallbackRestUrl}${slide?.url}`} alt={slide?.name} />
-                </div>
+                <img className={styles._slide} src={`${fallbackRestUrl}${slide?.url}`} alt={slide?.name} />
               </div>
             )
           })}
         </Slider>
       </div>
-      <div className={styles._responsive}>
+      <div className={styles._mainResponsive}>
         <Slider 
-          ref={slider => (customSlider.current = slider)}
           {...settingsResponsive} >
           {sliderResponsive && sliderResponsive.map((slide: any, index: any) => {
             return (
               <div key={index}>
-                <div className={styles._itemContainer}>
-                  {slide?.url && <img className={styles._imageSlider} src={`${fallbackRestUrl}${slide?.url}`} />}
-                </div>
+                <img className={styles._slide} src={`${fallbackRestUrl}${slide?.url}`} alt={slide?.name} />
               </div>
             )
           })}
         </Slider>
       </div>
-    </div>
+    </>
   )
 }
 

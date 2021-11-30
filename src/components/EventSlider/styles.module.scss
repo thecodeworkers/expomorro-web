@@ -1,30 +1,46 @@
 @import '../../../styles/index.scss';
 
 ._main {
+  display: block;
   width: 100%;
   padding: 2% 3%;
   box-sizing: border-box;
   position: relative;
 }
 
-._desktop {
-  display: block;
+._slide {
+  width: auto;
+  margin: 0 auto;
 }
 
-._responsive {
+._mainResponsive {
   display: none;
 }
 
-@include responsive(md) {
-  ._imageSlider {
-    margin: 0 auto; /* it centers any block level element */
-  }
+// ._desktop {
+//   display: block;
+//   width: 100%;
+//   padding: 2% 3%;
+//   box-sizing: border-box;
+//   position: relative;
+// }
 
-  ._desktop {
+// ._responsive {
+//   display: none;
+// }
+
+// ._imageSlider {
+//   width: auto;
+//   // margin: 0 auto; /* it centers any block level element */
+// }
+
+@include responsive(md) {
+
+  ._main {
     display: none;
   }
   
-  ._responsive {
+  ._mainResponsive {
     display: block;
     margin-bottom: 5%;
   }
