@@ -6,12 +6,26 @@
   box-sizing: border-box;
   position: relative;
 }
-._itemContainer {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+
+._desktop {
+  display: block;
+}
+
+._responsive {
+  display: none;
 }
 
 @include responsive(md) {
+  ._imageSlider {
+    margin: 0 auto; /* it centers any block level element */
+  }
+
+  ._desktop {
+    display: none;
+  }
+  
+  ._responsive {
+    display: block;
+    margin-bottom: 5%;
+  }
 }

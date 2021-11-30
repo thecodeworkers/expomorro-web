@@ -10,7 +10,8 @@ import PreviousArrow from './PreviousArrow'
 
 const EventSlider: FC<Props> = ({ data }) => {
   console.log("slider", data)
-  const slider = data.galery
+  const slider = data?.galery
+  const sliderResponsive = data?.responsiveImage
   const customSlider = useRef();
 
   const settings = {
@@ -20,35 +21,51 @@ const EventSlider: FC<Props> = ({ data }) => {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
-    responsive: [
-      {
-        breakpoint: 768,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1
-        }
-      },
-    ]
+  }
+
+  const settingsResponsive = {
+    dots: true,
+    arrows: false,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
   }
   
   return (
     <div className={styles._main}>
-      <Slider 
-        ref={slider => (customSlider.current = slider)}
-        nextArrow={ <NextArrow reference={customSlider} arrow={data?.rightArrow} />}
-        prevArrow={ <PreviousArrow reference={customSlider} arrow={data?.leftArrow} /> } 
-        {...settings} >
-        {slider && slider.map((slide: any, index: any) => {
-          return (
-            <div key={index}>
-              <div className={styles._itemContainer}>
-                <img className={styles._imageSlider} src={`${fallbackRestUrl}${slide?.url}`} alt={slide?.name} />
-                {/* { imageResponsive?.url && <div className={[styles._imageMain, styles._imageMobile].join(' ')} style={{backgroundImage: `url(${fallbackRestUrl}${imageResponsive.url})`}} />} */}
+      <div className={styles._desktop}>
+        <Slider 
+          ref={slider => (customSlider.current = slider)}
+          nextArrow={ <NextArrow reference={customSlider} arrow={data?.rightArrow} />}
+          prevArrow={ <PreviousArrow reference={customSlider} arrow={data?.leftArrow} /> } 
+          {...settings} >
+          {slider && slider.map((slide: any, index: any) => {
+            return (
+              <div key={index}>
+                <div className={styles._itemContainer}>
+                  <img className={styles._imageSlider} src={`${fallbackRestUrl}${slide?.url}`} alt={slide?.name} />
+                </div>
               </div>
-            </div>
-          )
-        })}
-      </Slider>
+            )
+          })}
+        </Slider>
+      </div>
+      <div className={styles._responsive}>
+        <Slider 
+          ref={slider => (customSlider.current = slider)}
+          {...settingsResponsive} >
+          {sliderResponsive && sliderResponsive.map((slide: any, index: any) => {
+            return (
+              <div key={index}>
+                <div className={styles._itemContainer}>
+                  {slide?.url && <img className={styles._imageSlider} src={`${fallbackRestUrl}${slide?.url}`} />}
+                </div>
+              </div>
+            )
+          })}
+        </Slider>
+      </div>
     </div>
   )
 }

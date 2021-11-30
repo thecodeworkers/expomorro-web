@@ -69,6 +69,11 @@ portfolios {
         url
         name
       }
+      responsiveImage {
+        ext
+        url
+        name
+      }
       leftArrow {
         ext
         url
