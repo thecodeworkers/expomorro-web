@@ -1,0 +1,17 @@
+@import '../../../styles/index.scss';
+
+._main {
+  width: 100%;
+  padding: 2% 3%;
+  box-sizing: border-box;
+  position: relative;
+}
+._itemContainer {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@include responsive(md) {
+}

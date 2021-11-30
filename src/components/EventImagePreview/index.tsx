@@ -5,8 +5,6 @@ import { fallbackRestUrl } from '@utils/path'
 
 const EventImagePreview: FC<Props> = ({ data }) => {
 
-  console.log("data", data)
-
   const title = data?.title
   const isVisible = data?.visible
   const image = data?.image

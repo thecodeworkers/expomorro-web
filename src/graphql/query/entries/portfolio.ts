@@ -62,6 +62,24 @@ portfolios {
         name
       }
     }
+    ... on ComponentSlidersEventGalery{
+      position
+      galery {
+        ext
+        url
+        name
+      }
+      leftArrow {
+        ext
+        url
+        name
+      }
+      rightArrow {
+        ext
+        url
+        name
+      }
+    }
   }
 }
 `

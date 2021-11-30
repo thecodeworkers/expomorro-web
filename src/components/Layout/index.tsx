@@ -22,8 +22,6 @@ const Layout: FC = () => {
   const page = (splitpath.length === 2) ? pages?.find((pag: any) => pag.uri === router?.asPath) : portfolios?.find((portfolio: any) => portfolio.uri === `/${splitpath[2]}`)
   
   const content = orderBy(page?.content, 'position', 'asc')
-  console.log("this is page", page)
-  console.log("this is content", content)
   return (
     <>
       <Head>

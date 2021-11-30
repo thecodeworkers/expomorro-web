@@ -11,6 +11,7 @@ import EventList from '../../EventList'
 import TitleButton from '../../TitleButton'
 import EventBodyInfo from '../../EventBodyInfo'
 import EventImagePreview from '../../EventImagePreview'
+import EventSlider from '../../EventSlider'
 
 export const layout = {
   ComponentBannersBanner: Banner,
@@ -25,5 +26,6 @@ export const layout = {
   ComponentSeccionesEventList: EventList,
   ComponentSeccionesTitleWithButton: TitleButton,
   ComponentSeccionesColumTexts: EventBodyInfo,
-  ComponentSeccionesImagePreview: EventImagePreview
+  ComponentSeccionesImagePreview: EventImagePreview,
+  ComponentSlidersEventGalery: EventSlider
 }
