@@ -12,7 +12,7 @@ const EventSlider: FC<Props> = ({ data }) => {
   
   const slider = data?.galery
   const sliderResponsive = data?.responsiveImage
-  const customSlider = useRef();
+  const customSlider = useRef()
 
   const settings = {
     dots: false,
