@@ -9,7 +9,7 @@ import NextArrow from './NextArrow'
 import PreviousArrow from './PreviousArrow'
 
 const EventSlider: FC<Props> = ({ data }) => {
-  console.log("slider", data)
+  
   const slider = data?.galery
   const sliderResponsive = data?.responsiveImage
   const customSlider = useRef();
