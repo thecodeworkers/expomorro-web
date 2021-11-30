@@ -1,6 +1,6 @@
 import { fallbackRestUrl } from '@utils/path'
 import React, { FC, useEffect, useRef, useState } from 'react'
-import { useSelector, useDispatch} from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
 import { Props } from './interface'
 import styles from './styles.module.scss'
 import { useRouter } from 'next/dist/client/router'
@@ -37,13 +37,13 @@ const EventList: FC<Props> = ({ data }) => {
 
   return (
     <>
-      { individualEvent && <h2 className={styles._seeMoreEventsTitle}>{page?.events}</h2>}
+      {individualEvent && <h2 className={styles._seeMoreEventsTitle}>{page?.events}</h2>}
       <div className={styles._main}>
         {portfolioData.map((portfolio: any, index: any) => {
           const difference = portfolio?.principalImage?.width > portfolio?.principalImage?.height
           return (
-            <div ref={boxElement} 
-              key={index} className={styles._portfolioContainer} style={{ height: width }} onClick={() => { router.push(`eventos${portfolio.uri}`); dispatch(setLoaderShow(true)) }}>
+            <div ref={boxElement}
+              key={index} className={styles._portfolioContainer} style={{ height: width }} onClick={() => { if (portfolio.content?.length) { router.push(`/eventos${portfolio.uri}`); dispatch(setLoaderShow(true)) } }}>
               <div className={styles._hoverShadow}>
                 <p>{portfolio?.name}</p>
               </div>
