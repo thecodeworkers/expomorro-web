@@ -12,7 +12,7 @@ portfolios {
     width
   }
   events
-  fields {
+  content {
     __typename
     ... on ComponentTextosText {
       text
@@ -57,6 +57,29 @@ portfolios {
       visible
       position
       responsive {
+        ext
+        url
+        name
+      }
+    }
+    ... on ComponentSlidersEventGalery{
+      position
+      galery {
+        ext
+        url
+        name
+      }
+      responsiveImage {
+        ext
+        url
+        name
+      }
+      leftArrow {
+        ext
+        url
+        name
+      }
+      rightArrow {
         ext
         url
         name

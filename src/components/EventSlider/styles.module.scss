@@ -1,0 +1,30 @@
+@import '../../../styles/index.scss';
+
+._main {
+  display: block;
+  width: 100%;
+  padding: 2% 3%;
+  box-sizing: border-box;
+  position: relative;
+}
+
+._slide {
+  width: auto;
+  margin: 0 auto;
+}
+
+._mainResponsive {
+  display: none;
+}
+
+@include responsive(md) {
+
+  ._main {
+    display: none;
+  }
+  
+  ._mainResponsive {
+    display: block;
+    margin: 10% 0 5% 0;
+  }
+}
