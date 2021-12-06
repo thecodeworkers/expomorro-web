@@ -20,11 +20,6 @@ pages {
       position
       fullWidth
     }
-    ... on ComponentBotoneriaBoton {
-      text
-      position
-      Link
-    }
     ... on ComponentSeccionesBotonTexto {
       position
       buttom {
