@@ -13,12 +13,15 @@ import Head from 'next/head'
 const Layout: FC = () => {
 
   const router = useRouter()
-  const { page: { pages }, font: { bold, normal, slim, roman }, color: { primary }, intermitence: { showLoader } } = useSelector((state: any) => state)
+  const { page: { pages }, font: { bold, normal, slim, roman }, color: { primary }, intermitence: { showLoader }, portfolio: { portfolios } } = useSelector((state: any) => state)
 
-  const page = pages?.find((pag: any) => pag.uri === router?.asPath)
-
+  const path = router?.asPath
+  
+  const splitpath = path.split('/')
+  
+  const page = (splitpath.length === 2) ? pages?.find((pag: any) => pag.uri === router?.asPath) : portfolios?.find((portfolio: any) => portfolio.uri === `/${splitpath[2]}`)
+  
   const content = orderBy(page?.content, 'position', 'asc')
-
   return (
     <>
       <Head>

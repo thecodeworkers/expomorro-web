@@ -1,0 +1,29 @@
+@import '../../../styles/index.scss';
+
+._main {
+  display: flex;
+  width: 100%;
+  align-content: center;
+  box-sizing: border-box;
+  padding: 5% 5%;
+  font-family: 'RomanFont', sans-serif;
+  font-size: medium;
+}
+
+._boxDescription {
+  width: 33.33%;
+  white-space: pre-line;
+  padding: 0 1%;
+}
+
+@include responsive(md) {
+  ._main {
+    flex-wrap: wrap;
+    padding: 5% 3% 0 3%;
+  }
+
+  ._boxDescription {
+    width: 100%;
+    padding: 3% 0;
+  }
+}

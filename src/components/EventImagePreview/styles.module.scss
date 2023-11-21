@@ -1,0 +1,60 @@
+@import '../../../styles/index.scss';
+
+._main {
+  display: flex;
+  width: 100%;
+  align-content: center;
+  box-sizing: border-box;
+  padding: 5% 0 5% 5%;
+  font-family: 'RomanFont', sans-serif;
+  font-size: medium;
+}
+
+._boxDescription {
+  width: 33.33%;
+  white-space: pre-line;
+  padding: 0 1%;
+}
+
+._imagePreview {
+  width: 66.66%;
+}
+
+._imageContainer {
+  width: 66.66%;
+  height: 75vh;
+}
+
+._imageDesktop {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+._imageMobile {
+  display: none;
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+@include responsive(md) {
+  ._main {
+    flex-wrap: wrap;
+    padding: 5% 3%;
+    flex-direction: column-reverse;
+  }
+
+  ._imageContainer {
+    width: 100%;
+    height: 35vh;
+  }
+
+  ._boxDescription {
+    width: 100%;
+    padding: 3% 0 0 0;
+  }  
+}
