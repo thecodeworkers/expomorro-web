@@ -17,16 +17,6 @@ metadata:
     nginx.ingress.kubernetes.io/send-timeout: "35000"
 spec:
   rules:
-    - host: expomorro-stg-web.thecodeworkers.com
-      http:
-        paths:
-          - pathType: Prefix
-            path: /
-            backend:
-              service:
-                name: expomorro-stg-web-service
-                port:
-                  number: 3000
     - host: expomorro.com.ve
       http:
         paths:
@@ -48,9 +38,6 @@ spec:
                 port:
                   number: 3000
   tls:
-    - hosts:
-        - expomorro-stg-web.thecodeworkers.com
-      secretName: expomorro-stg-web-thecodeworkers-com-tls
     - hosts:
         - expomorro.com.ve
       secretName: expomorro-com-ve-tls
